@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1612798425 source:c:\users\Á\source\repos\c\day4exec\main.c
+	<stdio.h>
+	<time.h>
+	<stdlib.h>
+
