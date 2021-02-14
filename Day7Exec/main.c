@@ -89,6 +89,9 @@ int main()
     puts("Enter two floats:");
     scanf("%f %f",&float_x,&float_y);
     printf("Sum is : %f\n",float_x*float_y);
+
+
+
     return 0;
 }
 
