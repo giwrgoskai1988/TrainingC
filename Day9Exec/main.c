@@ -11,14 +11,14 @@ int data[20];
 int *data_ptr;
 int x[X_LENGTH],y[Y_LENGTH];
 int counter;
-int a[LENGTH],b[LENGTH];
-long *ab_ptr;
+int a[LENGTH],b[LENGTH],ab[LENGTH];
+int *ab_ptr;
 float radius,*radius_ptr;
-long sumarrays(int[], int[],int , int);
-long* add_symmetrical_arrays(int[],int[],int);
+long sumarrays(int[], int[] ,int , int );
+int *add_symmetrical_arrays(int[] ,int[] ,int ,int[] );
 void fill_array_random(int[],int);
 
-int main()
+void main()
 {
     //Exec 1,2,3,4
     cost_ptr = &cost;
@@ -45,16 +45,19 @@ int main()
     //Exec 8,9
 
     fill_array_random(a,LENGTH);
-          puts("------------------------------------------------------------");
+    puts("------------------------------------------------------------");
     fill_array_random(b,LENGTH);
 
-    ab_ptr = add_symmetrical_arrays(a,b,LENGTH);
+    ab_ptr = add_symmetrical_arrays(a,b,LENGTH,ab);
+    puts("------------------------------------------------------------");
 
-    printf("%ld\n",ab_ptr);
+    puts("New Array");
+    puts("------------------------------------------------------------");
+
+   for (counter = 0 ; counter < LENGTH ; counter++)
+    printf("%d\n",*(ab_ptr + counter));
 
 
-
-    return 0;
 }
 
 void fill_array_random(int x[],int x_length)
@@ -82,14 +85,13 @@ long sumarrays(int x[], int y[], int x_length , int y_length)
 }
 
 
-long* add_symmetrical_arrays(int a[], int b[], int length)
+int *add_symmetrical_arrays(int a[], int b[], int length, int array_out[])
 {
-    long ab[length];
     for (counter = 0 ; counter < length ; counter++)
     {
-        ab[counter] = a[counter] + b[counter];
+        array_out[counter] = a[counter] + b[counter];
     }
-    printf("%d\n",&ab);
 
-    return ab;
+    return array_out;
 }
+
