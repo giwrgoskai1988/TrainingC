@@ -48,8 +48,8 @@ void main()
     printf("%s\n",str5);
 
 
-    char *str6 = "Kalhspera";
-    char *str7 = "World!";
+    char *str6 = "Kalhspereeeeea";
+    char *str7 = "World2!";
     addStrings(str6,str7);
 
 
@@ -80,7 +80,7 @@ char * compareStrings(char *a , char *b)
 char * addStrings(char *a , char *b)
 {
     char *new_string ;
-    new_string = malloc(strlen(a) + strlen(b) + 2);
+    new_string = malloc(strlen(a) + strlen(b) + 1);
 
     for(int i = 0 ; i < strlen(a) ; i++)
     {
@@ -88,12 +88,15 @@ char * addStrings(char *a , char *b)
 
     }
 
+    *(new_string + strlen(a) ) = ' ';
 
-    for(int z = 0; z < strlen(b); z++)
+
+    for(int z = 1; z <= strlen(b); z++)
     {
-        *(new_string + strlen(a)+z) = *(b + z);
-        printf("%s\n",new_string);
+        *(new_string + strlen(a)+z) = *(b + z -1 );
     }
+
+    *(new_string + strlen(a) + strlen(b) + 1) = '\0';
 
     printf("%s",new_string);
 
