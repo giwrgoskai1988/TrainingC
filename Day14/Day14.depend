@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1613833009 source:c:\users\Á\source\repos\mygit\trainingc\day14\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
