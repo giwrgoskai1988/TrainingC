@@ -3,6 +3,7 @@
 
 void read_from_file(char *file_path);
 int * count_letters(char *file_path,int array[]);
+void read_from_code_file(char *file_path);
 
 int main()
 {
@@ -32,7 +33,7 @@ int main()
 
     //Exec 6
 
-    print_file("C:\\fff\\openMe.txt");
+    print_file("C:\\fff\\opeddnMe.txt");
 
     puts("-----------------------------------------------");
 
@@ -45,8 +46,10 @@ int main()
         printf("%c found %d times!\n",i+32,*(ptr + i));
 
 
+    puts("-----------------------------------------------");
 
-
+    //Exec 8,9
+    read_from_code_file("C:\\Users\\Á\\source\\repos\\MyGit\\TrainingC\\Day14Exec\\main.c");
 
     return 0;
 }
@@ -71,8 +74,9 @@ void print_file(char *file_path)
             ch = getc(fh);
         }
         puts("Done!!");
-        fclose(fh);
+
     }
+    fclose(fh);
 }
 
 int * count_letters(char *file_path,int letters[])
@@ -96,10 +100,33 @@ int * count_letters(char *file_path,int letters[])
             *(ptr + a) += 1;
             ch = getc(fh);
         }
-        fclose(fh);
+
+    }
+    fclose(fh);
+    return ptr;
+
+}
+
+void read_from_code_file(char *file_path)
+{
+    FILE *fh = fopen(file_path,"r");
+
+    char line[1024];
+    int line_number = 1 ;
+
+    if(fh <= 0)
+    {
+        puts("File not found!");
     }
 
-    return ptr;
+    else
+    {
+        while(fgets(line,1024,fh) != NULL )
+        {
+           printf("%d : %s",line_number++,line);
+        }
+    }
+     fclose(fh);
 
 }
 
