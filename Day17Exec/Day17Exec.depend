@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1615565109 source:c:\users\Á\source\repos\mygit\trainingc\day17exec\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
